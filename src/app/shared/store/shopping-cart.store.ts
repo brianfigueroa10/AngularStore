@@ -23,7 +23,6 @@ function calculateTotalAmount(products: Product[]): number {
   return products.reduce((total, product) => total + product.price * product.qty, 0)
 }
 
-
 export const CartStore = signalStore(
   { providedIn: 'root' },
   withState(initialState),
