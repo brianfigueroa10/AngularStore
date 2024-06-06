@@ -1,0 +1,71 @@
+<section class="text-gray-600 body-font">
+  <div class="container px-5  mx-auto">
+
+    @if(cartStore.productsCount()) {
+          <div class="flex flex-col w-full mb-20 text-center">
+      <h1 class="text-3xl font-medium text-gray-900 sm:text-4xl title-font">Checkout page</h1>
+    </div>
+    <div class="w-full mx-auto overflow-auto lg:w-2/3">
+      <div class="flex justify-end p-2">
+        <button (click)="clearAll()"
+          class="flex px-4 py-1 text-lg text-white bg-yellow-500 border-0 rounded focus:outline-none hover:bg-yellow-600">Vaciar</button>
+      </div>
+      <table class="w-full text-left whitespace-no-wrap table-auto">
+        <thead>
+          <tr>
+            <th
+              class="px-4 py-3 text-sm font-medium tracking-wider text-gray-900 bg-gray-100 rounded-tl rounded-bl title-font">
+              Nombre</th>
+            <th class="px-4 py-3 text-sm font-medium tracking-wider text-gray-900 bg-gray-100 title-font">Cant</th>
+            <th class="px-4 py-3 text-sm font-medium tracking-wider text-gray-900 bg-gray-100 title-font">Precio</th>
+            <th class="px-4 py-3 text-sm font-medium tracking-wider text-gray-900 bg-gray-100 title-font"></th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (item of cartStore.products(); track $index) {
+          <tr>
+            <td class="px-4 py-3">{{item.title}}</td>
+            <td class="px-4 py-3">{{item.qty}}</td>
+            <td class="px-4 py-3 text-lg text-gray-900">{{item.price | currency}}</td>
+            <td>
+              <button (click)="removeItem(item.id)"
+                class="flex px-2 text-white bg-yellow-500 border-0 rounded focus:outline-none hover:bg-yellow-600">
+                X
+              </button>
+            </td>
+          </tr>
+          }
+
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="4">
+              <hr class="border-gray-900 border-t-1" />
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" class="font-bold">Total:</td>
+            <td class="px-4 py-3 text-lg not-italic font-bold text-gray-900">{{cartStore.totalAmount() |
+              currency}}
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+    <div class="flex w-full pl-4 mx-auto mt-4 lg:w-2/3">
+      <button (click)="onProceedToPay()"
+        class="flex px-6 py-2 ml-auto text-white bg-yellow-500 border-0 rounded focus:outline-none hover:bg-yellow-600">Pagar</button>
+    </div>
+    } @else {
+   <div class="text-center pt-20">
+
+    <h1 class="mt-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl">Carrito Vacio</h1>
+    <p class="mt-6 text-base leading-7 text-gray-600">Todavia no tienes productos en tu carrito. Agrega productos!</p>
+    <div class="mt-10 flex items-center justify-center gap-x-6">
+      <a routerLink="/products" class="rounded-md bg-yellow-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-yellow-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Tienda</a>
+      <a routerLink="/" class="text-sm font-semibold text-gray-900">Home <span aria-hidden="true">&rarr;</span></a>
+    </div>
+  </div>
+    }
+  </div>
+</section>

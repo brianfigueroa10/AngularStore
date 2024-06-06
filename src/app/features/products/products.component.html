@@ -1,0 +1,15 @@
+<section class="text-gray-600 body-font w-3/4 flex flex-col m-auto justify-center items-center ">
+      <div class=" px-5 mx-auto flex flex-col items-center gap-7">
+              <h2 class="font-bold text-3xl">Productos</h2>
+        <div class="flex justify-center flex-wrap gap-5 w-full ">
+    
+          @for (product of products(); track $index) {
+          <app-card
+            (addToCartEvent)="onAddToCart($event)"
+            class="w-80 border rounded-lg shadow-none hover:shadow-xl"
+            [product]="product"
+          />
+          }
+        </div>
+      </div>
+    </section>
