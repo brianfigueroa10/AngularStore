@@ -1,27 +1,56 @@
-# LandingStore
+# AngularStore - E-commerce App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.2.
+AngularStore es una aplicación de e-commerce sencilla que consume la API de [fakestoreapi.com](https://fakestoreapi.com). El proyecto está desarrollado con Angular, Stripe y Tailwind CSS, y tiene como objetivo proporcionar una experiencia de compra en línea funcional y atractiva.
 
-## Development server
+## Características
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Catálogo de productos:** Muestra una lista de productos disponibles con sus detalles y precios.
+- **Carrito de compras:** Permite a los usuarios agregar productos al carrito y gestionar las cantidades.
+- **Pago:** Integración con Stripe para simular el proceso de pago.
+- **Persistencia de datos:** Utiliza `localStorage` para almacenar el estado del carrito de compras.
 
-## Code scaffolding
+## Tecnologías Utilizadas
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Angular:** Para la estructura y lógica de la aplicación.
+- **Stripe:** Para la integración del sistema de pagos.
+- **Tailwind CSS:** Para el diseño y estilo de la interfaz de usuario.
 
-## Build
+## Cómo Ejecutar el Proyecto
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. **Clonar el repositorio:**
 
-## Running unit tests
+    ```bash
+    git clone https://github.com/brianfigueroa10/AngularStore.git
+    ```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2. **Instalar las dependencias:**
 
-## Running end-to-end tests
+    ```bash
+    cd AngularStore
+    npm install
+    ```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+3. **Iniciar la aplicación:**
 
-## Further help
+    ```bash
+    ng serve
+    ```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+4. **Abrir en tu navegador:** Abre `http://localhost:4200` en tu navegador web favorito.
+
+## Ejemplo de Uso
+
+1. **Explorar el catálogo:** Navega por la lista de productos disponibles y consulta sus detalles.
+2. **Agregar al carrito:** Haz clic en el botón "Agregar al carrito" para añadir productos al carrito de compras.
+3. **Gestionar el carrito:** Ve al carrito de compras para ajustar las cantidades de los productos seleccionados.
+4. **Realizar el pago:** Procede al pago utilizando la integración con Stripe para completar la compra.
+
+## Contribuciones
+
+Las contribuciones son bienvenidas. Si deseas contribuir a este proyecto, por favor sigue estos pasos:
+
+1. **Fork este repositorio.**
+2. **Crea una rama con tu nueva característica (`git checkout -b feature/nueva-caracteristica`).**
+3. **Haz commit de tus cambios (`git commit -m 'Agrega nueva característica'`).**
+4. **Push a la rama (`git push origin feature/nueva-caracteristica`).**
+5. **Abre un Pull Request.**
